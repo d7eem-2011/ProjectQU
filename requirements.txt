@@ -1,3 +1,6 @@
 Flask
 Flask-SQLAlchemy
 requests
+freeze
+psycopg2
+Flask-SQLAlchemy
