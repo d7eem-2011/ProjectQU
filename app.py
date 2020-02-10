@@ -3,15 +3,19 @@
 from flask import Flask, url_for, render_template, request, redirect, session
 from flask_sqlalchemy import SQLAlchemy
 from instagram import getfollowedby, getname
+from models import *
 
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///test.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://glevwrzaarkxwa:0fd4fb80c75117a0a44943b376fbffc4d2c9805cd291772b654991acd5203c9b@ec2-54-246-89-234.eu-west-1.compute.amazonaws.com:5432/d3h0s068htgt7k
+'
 db = SQLAlchemy(app)
 
-
+"""
 class User(db.Model):
-    """ Create user table"""
+   
+
+ Create user table
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(80), unique=True)
     password = db.Column(db.String(80))
@@ -19,6 +23,8 @@ class User(db.Model):
     def __init__(self, username, password):
         self.username = username
         self.password = password
+        
+"""
 
 
 @app.route('/', methods=['GET', 'POST'])
